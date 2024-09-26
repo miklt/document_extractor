@@ -23,7 +23,6 @@ def configure_azure():
 
 
 # Show title and description.
-st.title("📄 Aplicativo de Avaliação de Modelo")
 
 
 def payload_gpto_mini(token, base64_image_1):
@@ -153,3 +152,7 @@ if arquivo is not None:
 
         # Exibir a tabela
         st.table(df_resultado)
+        comentario = st.text_area("Escreva um comentário:", height=150)
+
+        if st.button("Enviar para Avaliação"):
+            st.write("Arquivo enviado com sucesso!")
