@@ -28,7 +28,7 @@ def configure_azure():
 def payload_gpto_mini(token, base64_image_1):
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
     payload = {
-        "model": "gpt-4o-mini",
+        "model": "gpt-4o",
         "messages": [
             {
                 "role": "system",
