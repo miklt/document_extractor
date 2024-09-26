@@ -28,7 +28,7 @@ def configure_azure():
 def payload_gpto_mini(token, base64_image_1):
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
     payload = {
-        "model": "gpt-4o",
+        "model": "gpt-4o-mini",
         "messages": [
             {
                 "role": "system",
@@ -143,7 +143,7 @@ if arquivo is not None:
             raise SystemExit(f"Failed to make the request. Error: {e}")
 
         # Handle the response as needed (e.g., print or process)
-        print(response.json())
+
         objeto_json = json.loads(response.json()["choices"][0]["message"]["content"])
         print(objeto_json)
         df_resultado = pd.DataFrame(
