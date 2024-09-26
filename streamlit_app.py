@@ -143,7 +143,7 @@ if arquivo is not None:
             raise SystemExit(f"Failed to make the request. Error: {e}")
 
         # Handle the response as needed (e.g., print or process)
-
+        print(response.json())
         objeto_json = json.loads(response.json()["choices"][0]["message"]["content"])
         print(objeto_json)
         df_resultado = pd.DataFrame(
