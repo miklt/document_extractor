@@ -1,53 +1,155 @@
 import streamlit as st
+import pandas as pd
+import json
 from openai import OpenAI
+import requests
+from azure.identity import ClientSecretCredential
+
+
+def configure_azure():
+    # Configuration
+    TENANT_ID = "YOUR_TENANT_ID"
+    CLIENT_ID = "YOUR_CLIENT_ID"
+    CLIENT_SECRET = "80984f26431044419225d9e6aff5ea39"
+    RESOURCE = "https://management.azure.com/.default"
+    IMAGE_PATH = "YOUR_IMAGE_PATH"
+
+    # Authenticate and get token
+    credential = ClientSecretCredential(
+        tenant_id=TENANT_ID, client_id=CLIENT_ID, client_secret=CLIENT_SECRET
+    )
+    token = credential.get_token(RESOURCE).token
+    print(token, "token")
+
 
 # Show title and description.
-st.title("📄 Document question answering")
-st.write(
-    "Upload a document below and ask a question about it – GPT will answer! "
-    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
-)
+st.title("📄 Aplicativo de Avaliação de Modelo")
 
-# Ask user for their OpenAI API key via `st.text_input`.
-# Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
-# via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
-openai_api_key = st.text_input("OpenAI API Key", type="password")
-if not openai_api_key:
-    st.info("Please add your OpenAI API key to continue.", icon="🗝️")
-else:
 
-    # Create an OpenAI client.
-    client = OpenAI(api_key=openai_api_key)
-
-    # Let the user upload a file via `st.file_uploader`.
-    uploaded_file = st.file_uploader(
-        "Upload a document (.txt or .md)", type=("txt", "md")
-    )
-
-    # Ask the user for a question via `st.text_area`.
-    question = st.text_area(
-        "Now ask a question about the document!",
-        placeholder="Can you give me a short summary?",
-        disabled=not uploaded_file,
-    )
-
-    if uploaded_file and question:
-
-        # Process the uploaded file and question.
-        document = uploaded_file.read().decode()
-        messages = [
+def payload_gpto_mini(token, base64_image_1):
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
+    payload = {
+        "model": "gpt-4o-mini",
+        "messages": [
+            {
+                "role": "system",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "Você é um assistente de IA que ajuda as pessoas a encontrar informações.",
+                    },
+                    {
+                        "type": "text",
+                        "text": "You are a machine that only returns and replies with valid, iterable RFC8259 compliant JSON in your responses. Don't use a codeblock json format, just return the JSON object.",
+                    },
+                ],
+            },
             {
                 "role": "user",
-                "content": f"Here's a document: {document} \n\n---\n\n {question}",
-            }
-        ]
+                "content": [
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/png;base64,{base64_image_1}",
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text": "Extraia as informações abaixo e retorne um objeto JSON que segue a norma RFC8259 no seguinte formato: {'cnpj':<string>,'data_hora_entrega':<string>,'hash_arquivo':<string>,'inscricao':<string>,'periodo_base':<string no formato 'aaaa-mm' por exemplo 2024-05>,'protocolo':<string>,'tipo_entrega':<string>,'validacao':<string>}.",
+                    },
+                    {
+                        "type": "text",
+                        "text": "Don't use a codeblock json format, just return the JSON object without breaklines or spaces.",
+                    },
+                ],
+            },
+        ],
+        "max_tokens": 300,
+    }
+    return headers, payload
 
-        # Generate an answer using the OpenAI API.
-        stream = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=messages,
-            stream=True,
+
+def create_payload(token, encoded_image):
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
+
+    # Payload for the request
+    payload = (
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Você é um assistente de IA que ajuda as pessoas a encontrar informações.",
+                        }
+                    ],
+                },
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{encoded_image}"
+                            },
+                        },
+                        {
+                            "type": "text",
+                            "text": "Extraia as informações abaixo e retorne um JSON:",
+                        },
+                        {"type": "text", "text": "• CNPJ"},
+                        {"type": "text", "text": "• Data Hora de Entrega"},
+                        {"type": "text", "text": "• Hash arquivo"},
+                        {"type": "text", "text": "• Inscrição"},
+                        {
+                            "type": "text",
+                            "text": "• Período Base (utilize o formato ano-mes. Ex.: 2024-05)",
+                        },
+                        {"type": "text", "text": "• Protocolo"},
+                        {"type": "text", "text": "• Tipo de Entrega"},
+                        {"type": "text", "text": "• Validação"},
+                    ],
+                },
+            ]
+        },
+    )
+    return headers, payload
+
+
+az_function_url = "https://funcoesmichelet.azurewebsites.net/api/image_to_base64"
+ENDPOINT_AZURE_AI = "https://synchrodatapowersolutions.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-02-15-preview"
+OPENAI_URL = "https://api.openai.com/v1/chat/completions"
+st.title("Aplicativo de Avaliação de Modelo")
+
+# Carregador de arquivo
+arquivo = st.file_uploader("Escolha um arquivo para enviar")
+
+if arquivo is not None:
+    # Enviar o arquivo para a API
+    files = {"file": arquivo.getvalue()}
+    response = requests.post(az_function_url, files=files)
+
+    if response.status_code == 200:
+        base64_image = response.json()
+        conteudo_base64 = base64_image["content"]
+        # headers, payload = create_payload(st.secrets["openai_api_key"], conteudo_base64)
+        headers, payload = payload_gpto_mini(st.secrets["token_mich"], conteudo_base64)
+        # Send request
+        try:
+            # response = requests.post(ENDPOINT_AZURE_AI, headers=headers, json=payload)
+            response = requests.post(OPENAI_URL, headers=headers, json=payload)
+            response.raise_for_status()  # Will raise an HTTPError if the HTTP request returned an unsuccessful status code
+        except requests.RequestException as e:
+            raise SystemExit(f"Failed to make the request. Error: {e}")
+
+        # Handle the response as needed (e.g., print or process)
+
+        objeto_json = json.loads(response.json()["choices"][0]["message"]["content"])
+        print(objeto_json)
+        df_resultado = pd.DataFrame(
+            list(objeto_json.items()), columns=["Campo", "Valor"]
         )
 
-        # Stream the response to the app using `st.write_stream`.
-        st.write_stream(stream)
+        # Exibir a tabela
+        st.table(df_resultado)
