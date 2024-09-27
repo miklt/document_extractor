@@ -29,6 +29,9 @@ def image_to_base64(file):
     filename = file.name
     img_png = None
     poppler_path = get_poppler_path()
+    print(poppler_path)
+    if poppler_path:
+        poppler_path = poppler_path.rsplit('/', 1)[0]
     # Process the file based on its type
     if filename.lower().endswith(".pdf"):
         # Convert PDF to PNG
