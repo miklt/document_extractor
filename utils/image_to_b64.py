@@ -16,13 +16,14 @@ def image_to_base64(file):
     # Read the file content
     file_content = file.read()
     filename = file.name
-
+    img_png = None
     # Process the file based on its type
     if filename.lower().endswith(".pdf"):
         # Convert PDF to PNG
         images = convert_from_bytes(file_content)
         img_byte_arr = io.BytesIO()
         images[0].save(img_byte_arr, format="PNG")
+        img_png = images[0].copy()
         processed_content = img_byte_arr.getvalue()
         filename = filename.rsplit(".", 1)[0] + ".png"
     elif filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif")):
@@ -31,6 +32,7 @@ def image_to_base64(file):
             # img.thumbnail((1024, 1024))
             img_byte_arr = io.BytesIO()
             img.save(img_byte_arr, format=img.format)
+            img_png = img.copy()
             processed_content = img_byte_arr.getvalue()
     else:
         # Leave other file types as they are
@@ -39,7 +41,7 @@ def image_to_base64(file):
     # Encode the processed content to base64
     base64_content = base64.b64encode(processed_content).decode("utf-8")
 
-    return base64_content
+    return base64_content, img_png
 
 
 def base64_to_png(base64_string):
