@@ -7,6 +7,17 @@ from datetime import datetime
 from PIL import Image
 from pdf2image import convert_from_bytes
 
+import subprocess
+
+
+def get_poppler_path():
+    try:
+        # Run the `which` command to find the path of Poppler's `pdfinfo`
+        poppler_path = subprocess.check_output(["which", "pdfinfo"]).decode().strip()
+        return poppler_path
+    except subprocess.CalledProcessError:
+        return None
+
 
 def image_to_base64(file):
     logging.info("Python HTTP trigger function processed a request.")
@@ -17,10 +28,11 @@ def image_to_base64(file):
     file_content = file.read()
     filename = file.name
     img_png = None
+    poppler_path = get_poppler_path()
     # Process the file based on its type
     if filename.lower().endswith(".pdf"):
         # Convert PDF to PNG
-        images = convert_from_bytes(file_content, poppler_path="poppler-utils\\usr\\bin")
+        images = convert_from_bytes(file_content, poppler_path=poppler_path)
         img_byte_arr = io.BytesIO()
         images[0].save(img_byte_arr, format="PNG")
         img_png = images[0].copy()
