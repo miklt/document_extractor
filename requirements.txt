@@ -34,6 +34,7 @@ packaging==24.1
 pandas==2.2.3
 pdf2image==1.17.0
 pillow==10.4.0
+poppler-utils
 portalocker==2.10.1
 protobuf==5.28.2
 pyarrow==17.0.0

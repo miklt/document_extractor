@@ -1,0 +1,33 @@
+Package: poppler-utils
+Source: poppler
+Version: 24.08.0-2
+Architecture: amd64
+Maintainer: Debian freedesktop.org maintainers <pkg-freedesktop-maintainers@lists.alioth.debian.org>
+Installed-Size: 721
+Depends: libpoppler140 (= 24.08.0-2), libc6 (>= 2.38), libcairo2 (>= 1.17.8), libfreetype6 (>= 2.2.1), liblcms2-2 (>= 2.2+git20110628), libstdc++6 (>= 13.1)
+Conflicts: pdftohtml
+Breaks: xpdf-utils (<< 3.02-2~)
+Replaces: pdftohtml, xpdf-reader, xpdf-utils (<< 3.02-2~)
+Provides: pdftohtml, xpdf-utils
+Section: utils
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://poppler.freedesktop.org/
+Description: PDF utilities (based on Poppler)
+ Poppler is a PDF rendering library based on Xpdf PDF viewer.
+ .
+ This package contains command line utilities (based on Poppler) for getting
+ information of PDF documents, convert them to other formats, or manipulate
+ them:
+  * pdfdetach -- lists or extracts embedded files (attachments)
+  * pdffonts -- font analyzer
+  * pdfimages -- image extractor
+  * pdfinfo -- document information
+  * pdfseparate -- page extraction tool
+  * pdfsig -- verifies digital signatures
+  * pdftocairo -- PDF to PNG/JPEG/PDF/PS/EPS/SVG converter using Cairo
+  * pdftohtml -- PDF to HTML converter
+  * pdftoppm -- PDF to PPM/PNG/JPEG image converter
+  * pdftops -- PDF to PostScript (PS) converter
+  * pdftotext -- text extraction
+  * pdfunite -- document merging tool

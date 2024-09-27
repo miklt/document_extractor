@@ -20,7 +20,7 @@ def image_to_base64(file):
     # Process the file based on its type
     if filename.lower().endswith(".pdf"):
         # Convert PDF to PNG
-        images = convert_from_bytes(file_content)
+        images = convert_from_bytes(file_content, poppler_path="poppler-utils\\usr\\bin")
         img_byte_arr = io.BytesIO()
         images[0].save(img_byte_arr, format="PNG")
         img_png = images[0].copy()
