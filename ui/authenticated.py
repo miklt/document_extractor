@@ -7,7 +7,7 @@ import requests
 from utils.payload import payload_azure_ai
 from utils.image_to_b64 import image_to_base64
 
-ENDPOINT_AZURE_AI = "https://synchrodatapowersolutions.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01"
+ENDPOINT_AZURE_AI = "https://synchrodatapowersolutions.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-06-01"
 
 
 def authenticated_page():
