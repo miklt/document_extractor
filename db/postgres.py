@@ -15,19 +15,25 @@ def get_connection():
     return conn
 
 
-def get_prompt():
+def get_prompts():
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT prompt_recibo_principal FROM prompts order by data_alteracao desc limit 1"
+        "SELECT prompt_recibo_acessorio, prompt_recibo_principal, prompt_recibo_compensacao FROM prompts order by data_alteracao desc limit 1"
     )
     prompt = cursor.fetchone()
     cursor.close()
     conn.close()
-    return prompt
+    r = None
+    if prompt is not None:
+        r = dict()
+        r["acessorio"] = prompt[0]
+        r["principal"] = prompt[1]
+        r["compensacao"] = prompt[2]
+    return r
 
 
-def insert_document(json_doc, comentario):    
+def insert_document(json_doc, comentario):
     json_doc_str = json.dumps(json_doc)
 
     conn = get_connection()
