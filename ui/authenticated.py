@@ -6,7 +6,7 @@ import json
 from utils.payload import payload_azure_ai
 from utils.image_to_b64 import image_to_base64
 from utils.request_to_azure import send_request_to_azure_ai
-from db.postgres import insert_document
+from db.postgres import insert_document_v2
 
 
 def escolher_prompt(tipo_prompt):
@@ -30,6 +30,7 @@ def authenticated_page():
     if arquivo is not None:
         st.session_state["file_uploaded"] = True
         filename = arquivo.name
+        st.session_state["filename"] = filename
         conteudo_base64, arquivo_png = image_to_base64(arquivo)
         if conteudo_base64 is not None:
             st.session_state["file_decoded"] = True
@@ -55,7 +56,8 @@ def enviar_imagem_para_azure():
     if not tipo_documento:
         st.error("Selecione um tipo de documento")
         return
-
+    else:
+        st.session_state["tipo_documento"] = tipo_documento
     # atualizar o prompt pelo select box
     if st.session_state["text_prompts"] is not None:
         prompt = st.session_state["text_prompts"][tipo_documento]
@@ -67,24 +69,9 @@ def enviar_imagem_para_azure():
         args=(st.secrets["token_gm"], conteudo_base64, prompt),
     ):
         pass
-    # response = send_request_to_azure_ai(, conteudo_base64, prompt)
-    
-
-    # if response is not None:
-    #     st.session_state["json_from_ai_received"] = True
-
-    #     json_string = response.json()["choices"][0]["message"]["content"]
-    #     print(json_string)
-    #     # Convert the string to a JSON object
-    #     json_string = json_string.replace(
-    #         "'", '"'
-    #     )  # Replace single quotes with double quotes
-    #     objeto_json = json.loads(json_string)
-    #     st.session_state["json_object"] = objeto_json
 
 
 def visualizar_png():
-    # Visualize the image file
     if st.session_state["png_file"]:
         st.image(
             st.session_state.png_file,
@@ -111,7 +98,12 @@ def visualizar_resultado():
 
         if st.button(
             "Enviar para Avaliação",
-            on_click=insert_document,
-            args=(objeto_json, comentario),
+            on_click=insert_document_v2,
+            args=(
+                objeto_json,
+                st.session_state["tipo_documento"],
+                st.session_state["filename"],
+                comentario,
+            ),
         ):
             st.toast("Arquivo enviado com sucesso!")

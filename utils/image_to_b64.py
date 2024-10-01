@@ -20,9 +20,6 @@ def get_poppler_path():
 
 
 def image_to_base64(file):
-    logging.info("Python HTTP trigger function processed a request.")
-
-    # Get the file from the request
 
     # Read the file content
     file_content = file.read()
@@ -35,16 +32,28 @@ def image_to_base64(file):
     # Process the file based on its type
     if filename.lower().endswith(".pdf"):
         # Convert PDF to PNG
-        images = convert_from_bytes(file_content, poppler_path=poppler_path)
+        images = convert_from_bytes(
+            file_content, poppler_path=poppler_path, grayscale=True
+        )
+        widths, heights = zip(*(i.size for i in images))
+
+        total_width = max(widths)
+        total_height = sum(heights)
+
+        concatenated_image = Image.new("RGB", (total_width, total_height))
+
+        y_offset = 0
+        for img in images:
+            concatenated_image.paste(img, (0, y_offset))
+            y_offset += img.height
+
         img_byte_arr = io.BytesIO()
-        images[0].save(img_byte_arr, format="PNG")
-        img_png = images[0].copy()
+        concatenated_image.save(img_byte_arr, format="PNG")
+        img_png = concatenated_image.copy()
         processed_content = img_byte_arr.getvalue()
         filename = filename.rsplit(".", 1)[0] + ".png"
     elif filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif")):
-        # Resize the image to a maximum of 1024x1024 while maintaining aspect ratio
         with Image.open(io.BytesIO(file_content)) as img:
-            # img.thumbnail((1024, 1024))
             img_byte_arr = io.BytesIO()
             img.save(img_byte_arr, format=img.format)
             img_png = img.copy()

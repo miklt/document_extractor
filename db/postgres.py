@@ -59,3 +59,27 @@ def insert_document(json_doc, comentario):
     conn.commit()
     cursor.close()
     conn.close()
+
+
+def insert_document_v2(json_doc, tipo_documento, nome_arquivo, comentarios):
+    json_doc_str = json.dumps(json_doc)
+
+    try:
+        conn = get_connection()
+        cursor = conn.cursor()
+        insert_query = """
+        INSERT INTO documentos (representacao_json, tipo_documento, nome_arquivo, comentarios)
+        VALUES (%s, %s, %s, %s)
+        """
+        cursor.execute(
+            insert_query,
+            (json_doc_str, tipo_documento, nome_arquivo, comentarios),
+        )
+        conn.commit()
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()

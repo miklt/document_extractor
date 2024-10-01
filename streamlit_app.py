@@ -13,6 +13,8 @@ if "file_uploaded" not in st.session_state:
     st.session_state["file_uploaded"] = False
 if "file_decoded" not in st.session_state:
     st.session_state["file_decoded"] = False
+if "filename" not in st.session_state:
+    st.session_state["filename"] = None
 if "conteudo_base64" not in st.session_state:
     st.session_state["conteudo_base64"] = None
 if "png_file" not in st.session_state:
@@ -24,7 +26,8 @@ if "prompt_received" not in st.session_state:
 
 if "text_prompts" not in st.session_state:
     st.session_state["text_prompts"] = None
-
+if "tipo_documento" not in st.session_state:
+    st.session_state["tipo_documento"] = None
 if "json_from_ai_received" not in st.session_state:
     st.session_state["json_from_ai_received"] = False
 # Main logic
