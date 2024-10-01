@@ -30,6 +30,8 @@ if "tipo_documento" not in st.session_state:
     st.session_state["tipo_documento"] = None
 if "json_from_ai_received" not in st.session_state:
     st.session_state["json_from_ai_received"] = False
+if "label_button_enviar" not in st.session_state:
+    st.session_state["label_button_enviar"] = "Salvar Documento"
 # Main logic
 if "authenticated" not in st.session_state:
     st.session_state["authenticated"] = False

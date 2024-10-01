@@ -9,6 +9,24 @@ from utils.request_to_azure import send_request_to_azure_ai
 from db.postgres import insert_document_v2
 
 
+@st.dialog("Arquivo enviado com sucesso")
+def reiniciar_app():
+    st.write("O arquivo foi enviado com sucesso. Você pode fechar esta mensagem.")
+    st.session_state["file_uploaded"] = False
+    st.session_state["file_decoded"] = False
+    st.session_state["filename"] = None
+    st.session_state["conteudo_base64"] = None
+    st.session_state["png_file"] = None
+    st.session_state["json_object"] = None
+    st.session_state["tipo_documento"] = None
+    st.session_state["json_from_ai_received"] = False
+
+    if st.button("Ok"):
+        st.rerun()
+    else:
+        st.session_state["label_button_enviar"] = "Enviar outro documento"
+
+
 def escolher_prompt(tipo_prompt):
     print(tipo_prompt)
     if tipo_prompt == "prompt 1":
@@ -27,6 +45,7 @@ def get_label(label):
 def authenticated_page():
     # Carregador de arquivo
     arquivo = st.file_uploader("Escolha um arquivo para enviar")
+    st.session_state["label_button_enviar"] = "Salvar Documento"
     if arquivo is not None:
         st.session_state["file_uploaded"] = True
         filename = arquivo.name
@@ -37,11 +56,12 @@ def authenticated_page():
             st.session_state["conteudo_base64"] = conteudo_base64
         if arquivo_png is not None:
             st.session_state["png_file"] = arquivo_png
+        arquivo = None
 
 
 def enviar_imagem_para_azure():
     if st.session_state["conteudo_base64"] is None:
-        st.error("Nenhum arquivo foi enviado")
+        st.info("Nenhum arquivo foi carregado")
         return
     else:
         conteudo_base64 = st.session_state["conteudo_base64"]
@@ -54,7 +74,7 @@ def enviar_imagem_para_azure():
         horizontal=True,
     )
     if not tipo_documento:
-        st.error("Selecione um tipo de documento")
+        st.info("Selecione um tipo de documento")
         return
     else:
         st.session_state["tipo_documento"] = tipo_documento
@@ -62,9 +82,9 @@ def enviar_imagem_para_azure():
     if st.session_state["text_prompts"] is not None:
         prompt = st.session_state["text_prompts"][tipo_documento]
 
-    st.write("Prompt: ", prompt)
+    # st.write("Prompt: ", prompt)
     if st.button(
-        "Enviar para Azure",
+        "Consultar IA",
         on_click=send_request_to_azure_ai,
         args=(st.secrets["token_gm"], conteudo_base64, prompt),
     ):
@@ -97,7 +117,7 @@ def visualizar_resultado():
         )
 
         if st.button(
-            "Enviar para Avaliação",
+            st.session_state["label_button_enviar"],
             on_click=insert_document_v2,
             args=(
                 objeto_json,
@@ -106,4 +126,4 @@ def visualizar_resultado():
                 comentario,
             ),
         ):
-            st.toast("Arquivo enviado com sucesso!")
+            reiniciar_app()
