@@ -6,7 +6,6 @@ def check_credentials(username, password):
         st.session_state["authenticated"] = True
     else:
         st.error("Senha ou usuário inválidos")
-    # Check credentials
 
 
 def login():
