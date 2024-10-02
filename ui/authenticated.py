@@ -115,6 +115,8 @@ def visualizar_resultado():
             "Escreva um comentário:",
             height=150,
         )
+        if comentario:
+            pass
 
         if st.button(
             st.session_state["label_button_enviar"],
