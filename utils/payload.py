@@ -1,5 +1,9 @@
 def payload_azure_ai(token, base64_image_1, prompt):
-    headers = {"Content-Type": "application/json", "api-key": f"{token}"}
+    headers = {
+        "Content-Type": "application/json",
+        "api-key": f"{token}",
+        "Connection": "close",
+    }
     payload = {
         "messages": [
             {
