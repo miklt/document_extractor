@@ -23,7 +23,8 @@ if "json_object" not in st.session_state:
     st.session_state["json_object"] = None
 if "prompt_received" not in st.session_state:
     st.session_state["prompt_received"] = False
-
+if "text_ocr" not in st.session_state:
+    st.session_state["text_ocr"] = None
 if "text_prompts" not in st.session_state:
     st.session_state["text_prompts"] = None
 if "tipo_documento" not in st.session_state:
@@ -45,8 +46,9 @@ if not st.session_state["prompt_received"]:
         st.session_state["prompt_received"] = True
 
 if st.session_state["authenticated"]:
-    if not st.session_state["file_uploaded"]:
-        authenticated_page()
+    # if not st.session_state["file_uploaded"]:
+    #     authenticated_page()
+    authenticated_page()
 
     visualizar_png()
     enviar_imagem_para_azure()

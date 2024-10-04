@@ -1,0 +1,865 @@
+Receita Federal do Brasil
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP 8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+DADOS INICIAIS
+
+Nome Empresarial
+
+AGROPECUARIA MAGGI LTDA
+
+Data de Criacao
+
+17/05/2024
+
+Data de Transmissao
+
+17/05/2024
+
+Tipo de Documento
+
+Declaracao de Compensacao
+
+Tipo de Credito
+
+Saldo Negativo de IRPJ
+
+PER/DCOMP Retificador
+
+Nao
+
+Credito Oriundo de Acao Judicial
+
+Nao
+
+Qualificacao do Contribuinte
+
+Outra Qualificacao
+
+Pessoa Juridica Extinta por Liquidacao Voluntaria
+
+Nao
+
+Nao @ permitido indicar credito que tiver por fundamento a alegacao de inconstitucionalidade de lei, exceto nos casos em
+
+que a lei:
+
+1) Tenha sido declarada inconstitucional pelo Supremo Tribunal Federal em acao direta de inconstitucionalidade ou em acao
+
+declaratoria de constitucionalidade;
+
+2) Tenha tido sua execucao suspensa pelo Senado Federal;
+
+3) Tenha sido julgada inconstitucional em sentenca judicial transitada em julgado a favor do contribuinte; ou
+
+Federal.
+
+contemplada nas excecoes acima apontadas?
+
+Nao
+
+Receita Federal do Brasil
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP_8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+DADOS DO RESPONSAVEL DA PESSOA JURiDICA
+
+Dados do Responsavel da Pessoa Juridica Perante a RFB
+
+Nome
+
+PEDRO SERGIO ALMEIDA PRADO DE CASTRO VALENTE
+
+CPF
+
+064.123.578-07
+
+Dados do Responsavel pelo Preenchimento
+
+Nome
+
+VINICIUS XAVIER DE PAULA
+
+CPF
+
+034.781.191-46
+
+Endereco Eletrönico
+
+cscfiscal.contribuicoes@amaggi.com.br
+
+Receita Federal do Brasil
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP 8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+CREDITO SALDO NEGATIVO DE IRPJ
+
+Informado em Processo Administrativo anterior
+
+Nao
+
+Informado em Outro PER/DCOMP
+
+Sim
+
+N° do PER/DCOMP Inicial
+
+06027.37461.150524.1.2.02-6161
+
+Crédito de Sucedida
+
+Nao
+
+Forma de Tributacao do Lucro
+
+Lucro Real
+
+Forma de Apuracao
+
+Trimestral
+
+Periodo de Apuracao
+
+4° Trimestre/2022
+
+Data Inicial do Periodo
+
+01/10/2022
+
+Data Final do Periodo
+
+31/12/2022
+
+Selic Acumulada
+
+16,80%
+
+Imposto Devido
+
+0,00
+
+Total das Parcelas de Composicao do Crédito
+
+0,00
+
+Valor do Saldo Negativo
+
+21.803.365,27
+
+Crédito Original na Data da Entrega
+
+18.450.632,03
+
+Crédito Atualizado
+
+21.550.338,21
+
+Total dos debitos desta DCOMP
+
+20.238.148,60
+
+Total do Credito Original Utilizado nesta DCOMP
+
+17.327.182,02
+
+Saldo do Crédito Original
+
+1.123.450,01
+
+Receita Federal do Brasil
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+001.Debito CSRF
+
+CNPJ do Detentor do Debito
+
+00.315.457/0001-95
+
+Débito de Sucedida
+
+Nao
+
+Grupo de Tributo
+
+CSRF - Contribuicoes Sociais Retidas na Fonte pelas PJ de
+
+Direito Privado
+
+Código da Receita/Denominacao
+
+5952-07 - CSLL, Cofins e PIS - Retencao de Contribuiqes
+
+sobre Pagamentos de PJ a PJ de Direito Privado
+
+Débito Controlado em Processo
+
+Nao
+
+Periodo de Apuracao
+
+Abril de 2024
+
+Periodicidade
+
+Mensal
+
+Data de Vencimento do Tributo/Quota
+
+20/05/2024
+
+Nümero do Recibo de Transmissao DCTFWeb
+
+050000232426390
+
+Data de Transmissao DCTFWeb
+
+16/05/2024
+
+Categoria DCTFWeb
+
+Geral
+
+Indicativo de organismo estrangeiro DCTFWeb
+
+Nao
+
+Periodicidade DCTFWeb
+
+Mensal
+
+Periodo Apuracao DCTFWeb
+
+04/2024
+
+Principal
+
+396.842,01
+
+Multa
+
+0,00
+
+Juros
+
+0,00
+
+396.842,01
+
+002.Debito CSRF
+
+CNPJ do Detentor do Debito
+
+00.315.457/0001-95
+
+Debito de Sucedida
+
+Nao
+
+Grupo de Tributo
+
+CSRF - Contribuiqoes Sociais Retidas na Fonte pelas PJ de
+
+Direito Privado
+
+Código da Receita/Denominacao
+
+5987-07 - CSLL - Retencao sobre Pagamentos de PJ a PJ de
+
+Direito Privado amparada por medida judicial
+
+Debito Controlado em Processo
+
+Nao
+
+Periodo de Apuracao
+
+Abril de 2024
+
+Periodicidade
+
+Mensal
+
+Data de Vencimento do Tributo/Quota
+
+20/05/2024
+
+Receita Federal do Brasi
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP 8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+Nümero do Recibo de Transmissao DCTFWeb
+
+050000232426390
+
+Data de Transmissao DCTFWeb
+
+16/05/2024
+
+Categoria DCTFWeb
+
+Geral
+
+Indicativo de organismo estrangeiro DCTFWeb
+
+Nao
+
+Periodicidade DCTFWeb
+
+Mensal
+
+Periodo Apuracao DCTFWeb
+
+04/2024
+
+Principal
+
+1.144,79
+
+Multa
+
+0,00
+
+Juros
+
+0,00
+
+Total
+
+1.144,79
+
+003.Debito IRRF
+
+CNPJ do Detentor do Debito
+
+00.315.457/0001-95
+
+Débito de Sucedida
+
+Nao
+
+Grupo de Tributo
+
+IRRF - Imposto de Renda Retido na Fonte
+
+Código da Receita/Denominacao
+
+0561-07 - IRRF - Rendimento do Trabalho Assalariado no
+
+Pais/Ausente no Exterior a Servico do Pais
+
+Debito Controlado em Processo
+
+Nao
+
+Periodo de Apuracao
+
+Abril de 2024
+
+Periodicidade
+
+Mensal
+
+Data de Vencimento do Tributo/Quota
+
+20/05/2024
+
+Nümero do Recibo de Transmissao DCTFWeb
+
+050000232426390
+
+Data de Transmissao DCTFWeb
+
+16/05/2024
+
+Categoria DCTFWeb
+
+Geral
+
+Indicativo de organismo estrangeiro DCTFWeb
+
+Nao
+
+Periodicidade DCTFWeb
+
+Mensal
+
+Periodo Apuracao DCTFWeb
+
+04/2024
+
+Principal
+
+2.363.753,29
+
+Multa
+
+0,00
+
+Juros
+
+0,00
+
+Total
+
+2.363.753,29
+
+Receita Federal do Brasil
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+004. Debito IRRF
+
+CNPJ do Detentor do Débito
+
+00.315.457/0001-95
+
+Débito de Sucedida
+
+Nao
+
+Grupo de Tributo
+
+IRRF - Imposto de Renda Retido na Fonte
+
+Código da Receita/Denominacao
+
+0588-06 - IRRF - Rendimento do Trabalho sem Vinculo
+
+Empregaticio
+
+Debito Controlado em Processo
+
+Nao
+
+Periodo de Apuracao
+
+Abril de 2024
+
+Periodicidade
+
+Mensal
+
+Data de Vencimento do Tributo/Quota
+
+20/05/2024
+
+Nümero do Recibo de Transmissao DCTFWeb
+
+050000232426390
+
+Data de Transmissao DCTFWeb
+
+16/05/2024
+
+Categoria DCTFWeb
+
+Geral
+
+Indicativo de organismo estrangeiro DCTFWeb
+
+Nao
+
+Periodicidade DCTFWeb
+
+Mensal
+
+Periodo Apuracao DCTFWeb
+
+04/2024
+
+Principal
+
+957,80
+
+Multa
+
+0,00
+
+Juros
+
+0,00
+
+Total
+
+957,80
+
+005.Débito IRRF
+
+CNPJ do Detentor do Debito
+
+00.315.457/0001-95
+
+Débito de Sucedida
+
+Nao
+
+Grupo de Tributo
+
+IRRF - Imposto de Renda Retido na Fonte
+
+Código da Receita/Denominacao
+
+1708-06 - IRRF  Remuneracao de Servicos Profissionais
+
+Prestados por Pessoa Juridica/Servicos de Limpeza,
+
+Conservacao, Seguranca e Locacao de MaodeObra
+
+Prestados por Pessoa Juridica
+
+Debito Controlado em Processo
+
+Nao
+
+Periodo de Apuracao
+
+Abril de 2024
+
+Periodicidade
+
+Mensal
+
+Receita Federal do Brasil
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP 8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+Data de Vencimento do Tributo/Quota
+
+20/05/2024
+
+Nümero do Recibo de Transmissao DCTFWeb
+
+050000232426390
+
+Data de Transmissao DCTFWeb
+
+16/05/2024
+
+Categoria DCTFWeb
+
+Geral
+
+Indicativo de organismo estrangeiro DCTFWeb
+
+Nao
+
+Periodicidade DCTFWeb
+
+Mensal
+
+Periodo Apuracao DCTFWeb
+
+04/2024
+
+Principal
+
+140.862,16
+
+Multa
+
+0,00
+
+Juros
+
+0,00
+
+Total
+
+140.862,16
+
+006. Débito IRRF
+
+CNPJ do Detentor do Debito
+
+00.315.457/0001-95
+
+Debito de Sucedida
+
+Nao
+
+Grupo de Tributo
+
+IRRF - Imposto de Renda Retido na Fonte
+
+Código da Receita/Denominacao
+
+3280-06 - IRRF - Servicos Prestados por Associados de
+
+Cooperativas de Trabalho
+
+Débito Controlado em Processo
+
+Nao
+
+Periodo de Apuracao
+
+Abril de 2024
+
+Periodicidade
+
+Mensal
+
+Data de Vencimento do Tributo/Quota
+
+20/05/2024
+
+Nümero do Recibo de Transmissao DCTFWeb
+
+050000232426390
+
+Data de Transmissao DCTFWeb
+
+16/05/2024
+
+Categoria DCTFWeb
+
+Geral
+
+Indicativo de organismo estrangeiro DCTFWeb
+
+Nao
+
+Periodicidade DCTFWeb
+
+Mensal
+
+Periodo Apuracao DCTFWeb
+
+04/2024
+
+Principal
+
+696,50
+
+Multa
+
+0,00
+
+Juros
+
+0,00
+
+Total
+
+696,50
+
+Receita Federal do Brasil
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+007. Débito IRRF
+
+CNPJ do Detentor do Debito
+
+00.315.457/0001-95
+
+Débito de Sucedida
+
+Nao
+
+Grupo de Tributo
+
+IRRF - Imposto de Renda Retido na Fonte
+
+Código da Receita/Denominacao
+
+3562-01 - IRRF Participacao nos lucros ou resultados (PLR)
+
+objeto de negociacao entre a empresa e seus empregados.
+
+Debito Controlado em Processo
+
+Nao
+
+Periodo de Apuracao
+
+Abril de 2024
+
+Periodicidade
+
+Mensal
+
+Data de Vencimento do Tributo/Quota
+
+20/05/2024
+
+Nümero do Recibo de Transmissao DCTFWeb
+
+050000232426390
+
+Data de Transmissao DCTFWeb
+
+16/05/2024
+
+Categoria DCTFWeb
+
+Geral
+
+Indicativo de organismo estrangeiro DCTFWeb
+
+Nao
+
+Periodicidade DCTFWeb
+
+Mensal
+
+Periodo Apuracao DCTFWeb
+
+04/2024
+
+Principal
+
+17.330.717,62
+
+Multa
+
+0,00
+
+Juros
+
+0,00
+
+Total
+
+17.330.717,62
+
+008.Débito IRRF
+
+CNPJ do Detentor do Debito
+
+00.315.457/0001-95
+
+Débito de Sucedida
+
+Nao
+
+Grupo de Tributo
+
+IRRF - Imposto de Renda Retido na Fonte
+
+Código da Receita/Denominacao
+
+8045-06 - IRRF  Comisses e Corretagens Pagas a Pessoa
+
+Juridica/Servicos de Propaganda Prestados por Pessoa
+
+Juridica
+
+Debito Controlado em Processo
+
+Nao
+
+Periodo de Apuracao
+
+Abril de 2024
+
+Periodicidade
+
+Mensal
+
+Data de Vencimento do Tributo/Quota
+
+20/05/2024
+
+Receita Federal do Brasil
+
+PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
+
+PERDCOMP 8.2
+
+CNPJ 00.315.457/0001-95
+
+03360.90463.170524.1.3.02-8375
+
+Nümero do Recibo de Transmissao DCTFWeb
+
+050000232426390
+
+Data de Transmissao DCTFWeb
+
+16/05/2024
+
+Categoria DCTFWeb
+
+Geral
+
+Indicativo de organismo estrangeiro DCTFWeb
+
+Nao
+
+Periodicidade DCTFWeb
+
+Mensal
+
+Periodo Apuracao DCTFWeb
+
+04/2024
+
+Principal
+
+3.174,43
+
+Multa
+
+0,00
+
+Juros
+
+0,00
+
+Total
+
+3.174,43
+
+TOTAL
+
+20.238.148,60

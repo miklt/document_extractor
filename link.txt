@@ -1,0 +1,1 @@
+https://andrejusb.blogspot.com/2023/06/paddleocr-as-service-with-fastapi.html

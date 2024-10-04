@@ -1,4 +1,6 @@
-def payload_azure_ai(token, base64_image_1, prompt):
+def payload_base64_azure_ai(
+    token=None, base64_image_1=None, prompt=None, ocr_text=None
+):
     headers = {
         "Content-Type": "application/json",
         "api-key": f"{token}",
@@ -31,7 +33,42 @@ def payload_azure_ai(token, base64_image_1, prompt):
                     {
                         "type": "text",
                         # "text": f"Extraia as informações abaixo e retorne um objeto JSON que segue a norma RFC8259 no seguinte formato: {'cnpj':<string>,'data_hora_entrega':<string>,'hash_arquivo':<string>,'inscricao':<string>,'periodo_base':<string no formato 'aaaa-mm' por exemplo 2024-05>,'protocolo':<string>,'tipo_entrega':<string>,'validacao':<string>}.",
-                        "text": f"{prompt}",
+                        "text": f"{prompt}-{ocr_text}",
+                    },
+                ],
+            },
+        ],
+    }
+    return headers, payload
+
+
+def payload_azure_ai(token=None, ocr_text=None, prompt=None):
+    headers = {
+        "Content-Type": "application/json",
+        "api-key": f"{token}",
+        "Connection": "close",
+    }
+    payload = {
+        "messages": [
+            {
+                "role": "system",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "Você é um assistente de IA que ajuda as pessoas a encontrar informações.",
+                    },
+                    {
+                        "type": "text",
+                        "text": "You are a machine that only returns and replies with valid, iterable RFC8259 compliant JSON in your responses. Don't use a codeblock json format, just return the JSON object.",
+                    },
+                ],
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": f"{prompt}-{ocr_text}",
                     },
                 ],
             },

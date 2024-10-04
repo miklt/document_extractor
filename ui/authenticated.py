@@ -20,6 +20,7 @@ def reiniciar_app():
     st.session_state["json_object"] = None
     st.session_state["tipo_documento"] = None
     st.session_state["json_from_ai_received"] = False
+    st.session_state["text_ocr"] = None
 
     if st.button("Ok"):
         st.rerun()
@@ -50,12 +51,15 @@ def authenticated_page():
         st.session_state["file_uploaded"] = True
         filename = arquivo.name
         st.session_state["filename"] = filename
-        conteudo_base64, arquivo_png = image_to_base64(arquivo)
-        if conteudo_base64 is not None:
-            st.session_state["file_decoded"] = True
-            st.session_state["conteudo_base64"] = conteudo_base64
-        if arquivo_png is not None:
-            st.session_state["png_file"] = arquivo_png
+        if not st.session_state["file_decoded"]:
+            conteudo_base64, arquivo_png, text_ocr = image_to_base64(arquivo)
+            if conteudo_base64 is not None:
+                st.session_state["file_decoded"] = True
+                st.session_state["conteudo_base64"] = conteudo_base64
+            if arquivo_png is not None:
+                st.session_state["png_file"] = arquivo_png
+            if text_ocr is not None:
+                st.session_state["text_ocr"] = text_ocr
         arquivo = None
 
 
@@ -65,30 +69,32 @@ def enviar_imagem_para_azure():
         return
     else:
         conteudo_base64 = st.session_state["conteudo_base64"]
+        ocr_text = st.session_state["text_ocr"]
 
-    tipo_documento = st.radio(
-        "Tipo de Documento",
-        ["acessorio", "principal", "compensacao"],
-        index=None,
-        format_func=get_label,
-        horizontal=True,
-    )
-    if not tipo_documento:
-        st.info("Selecione um tipo de documento")
-        return
-    else:
-        st.session_state["tipo_documento"] = tipo_documento
-    # atualizar o prompt pelo select box
-    if st.session_state["text_prompts"] is not None:
-        prompt = st.session_state["text_prompts"][tipo_documento]
+        tipo_documento = st.radio(
+            "Tipo de Documento",
+            ["acessorio", "principal", "compensacao"],
+            index=None,
+            format_func=get_label,
+            horizontal=True,
+        )
+        if not tipo_documento:
+            st.info("Selecione um tipo de documento")
+            return
+        else:
+            st.session_state["tipo_documento"] = tipo_documento
+        # atualizar o prompt pelo select box
+        if st.session_state["text_prompts"] is not None:
+            prompt = st.session_state["text_prompts"][tipo_documento]
 
-    # st.write("Prompt: ", prompt)
-    if st.button(
-        "Consultar IA",
-        on_click=send_request_to_azure_ai,
-        args=(st.secrets["token_gm"], conteudo_base64, prompt),
-    ):
-        pass
+        # st.write("Prompt: ", prompt)
+        # token, conteudo_base64=None, prompt=None, ocr_text=None):
+        if st.button(
+            "Consultar IA",
+            on_click=send_request_to_azure_ai,
+            args=(st.secrets["token_gm"], conteudo_base64, ocr_text, prompt),
+        ):
+            pass
 
 
 def visualizar_png():
