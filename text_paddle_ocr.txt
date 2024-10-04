@@ -4,23 +4,23 @@ PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
 
 PERDCOMP 8.2
 
-CNPJ 00.315.457/0001-95
+CNPJ 43.059.559/0001-08
 
-03360.90463.170524.1.3.02-8375
+11430.20763.230824.1.3.03-0909
 
 DADOS INICIAIS
 
 Nome Empresarial
 
-AGROPECUARIA MAGGI LTDA
+DURATEX FLORESTAL LTDA
 
 Data de Criacao
 
-17/05/2024
+23/08/2024
 
 Data de Transmissao
 
-17/05/2024
+23/08/2024
 
 Tipo de Documento
 
@@ -28,7 +28,7 @@ Declaracao de Compensacao
 
 Tipo de Credito
 
-Saldo Negativo de IRPJ
+Saldo Negativo de CSLL
 
 PER/DCOMP Retificador
 
@@ -68,11 +68,11 @@ Receita Federal do Brasil
 
 PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
 
-PERDCOMP_8.2
+PERDCOMP 8.2
 
-CNPJ 00.315.457/0001-95
+CNPJ 43.059.559/0001-08
 
-03360.90463.170524.1.3.02-8375
+11430.20763.230824.1.3.03-0909
 
 DADOS DO RESPONSAVEL DA PESSOA JURiDICA
 
@@ -80,25 +80,45 @@ Dados do Responsavel da Pessoa Juridica Perante a RFB
 
 Nome
 
-PEDRO SERGIO ALMEIDA PRADO DE CASTRO VALENTE
+CARLOS HENRIQUE PINTO HADDAD
 
 CPF
 
-064.123.578-07
+074.277.098-29
+
+Telefone Fixo
+
+(11) 31797645
+
+Endereco Eletrönico
+
+contato.contabil@dex.co
 
 Dados do Responsavel pelo Preenchimento
 
 Nome
 
-VINICIUS XAVIER DE PAULA
+MARCELO PALMEIRA DOS SANTOS
 
 CPF
 
-034.781.191-46
+089.965.028-71
+
+CRC
+
+1SP188793/O-0
+
+UF
+
+SP
+
+Telefone Fixo
+
+(11)31797645
 
 Endereco Eletrönico
 
-cscfiscal.contribuicoes@amaggi.com.br
+contato.contabil@dex.co
 
 Receita Federal do Brasil
 
@@ -106,11 +126,11 @@ PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
 
 PERDCOMP 8.2
 
-CNPJ 00.315.457/0001-95
+CNPJ 43.059.559/0001-08
 
-03360.90463.170524.1.3.02-8375
+11430.20763.230824.1.3.03-0909
 
-CREDITO SALDO NEGATIVO DE IRPJ
+CREDITO SALDO NEGATIVO DE CSLL
 
 Informado em Processo Administrativo anterior
 
@@ -122,37 +142,37 @@ Sim
 
 N° do PER/DCOMP Inicial
 
-06027.37461.150524.1.2.02-6161
+34185.25378.220824.1.2.03-6408
 
 Crédito de Sucedida
 
 Nao
 
-Forma de Tributacao do Lucro
+Forma de Tributacao no Periodo
 
 Lucro Real
 
 Forma de Apuracao
 
-Trimestral
+Anual
 
-Periodo de Apuracao
+Exercicio
 
-4° Trimestre/2022
+2024
 
 Data Inicial do Periodo
 
-01/10/2022
+01/01/2023
 
 Data Final do Periodo
 
-31/12/2022
+31/12/2023
 
 Selic Acumulada
 
-16,80%
+7,02%
 
-Imposto Devido
+CSLL Devida
 
 0,00
 
@@ -162,27 +182,27 @@ Total das Parcelas de Composicao do Crédito
 
 Valor do Saldo Negativo
 
-21.803.365,27
+1.528.540,13
 
 Crédito Original na Data da Entrega
 
-18.450.632,03
+1.528.540,13
 
 Crédito Atualizado
 
-21.550.338,21
+1.635.843,65
 
 Total dos debitos desta DCOMP
 
-20.238.148,60
+1.635.843,65
 
 Total do Credito Original Utilizado nesta DCOMP
 
-17.327.182,02
+1.528.540,13
 
 Saldo do Crédito Original
 
-1.123.450,01
+0,00
 
 Receita Federal do Brasil
 
@@ -190,15 +210,15 @@ PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
 
 PERDCOMP8.2
 
-CNPJ 00.315.457/0001-95
+CNPJ 43.059.559/0001-08
 
-03360.90463.170524.1.3.02-8375
+11430.20763.230824.1.3.03-0909
 
-001.Debito CSRF
+001.Débito PIS/PASEP
 
 CNPJ do Detentor do Debito
 
-00.315.457/0001-95
+43.059.559/0001-08
 
 Débito de Sucedida
 
@@ -206,23 +226,21 @@ Nao
 
 Grupo de Tributo
 
-CSRF - Contribuicoes Sociais Retidas na Fonte pelas PJ de
+PIS/PASEP - Contribuicao para Programa de Integracao
 
-Direito Privado
+Social/Formacao de Patrim. Serv. Püblico
 
 Código da Receita/Denominacao
 
-5952-07 - CSLL, Cofins e PIS - Retencao de Contribuiqes
+6912-01 - PIS - Nao Cumulativo Lei 10.637/02
 
-sobre Pagamentos de PJ a PJ de Direito Privado
-
-Débito Controlado em Processo
+Debito Controlado em Processo
 
 Nao
 
 Periodo de Apuracao
 
-Abril de 2024
+Julho de 2024
 
 Periodicidade
 
@@ -230,35 +248,11 @@ Mensal
 
 Data de Vencimento do Tributo/Quota
 
-20/05/2024
-
-Nümero do Recibo de Transmissao DCTFWeb
-
-050000232426390
-
-Data de Transmissao DCTFWeb
-
-16/05/2024
-
-Categoria DCTFWeb
-
-Geral
-
-Indicativo de organismo estrangeiro DCTFWeb
-
-Nao
-
-Periodicidade DCTFWeb
-
-Mensal
-
-Periodo Apuracao DCTFWeb
-
-04/2024
+23/08/2024
 
 Principal
 
-396.842,01
+1.009.333,21
 
 Multa
 
@@ -268,13 +262,15 @@ Juros
 
 0,00
 
-396.842,01
+Total
 
-002.Debito CSRF
+1.009.333,21
+
+002.Débito COFINS
 
 CNPJ do Detentor do Debito
 
-00.315.457/0001-95
+43.059.559/0001-08
 
 Debito de Sucedida
 
@@ -282,15 +278,13 @@ Nao
 
 Grupo de Tributo
 
-CSRF - Contribuiqoes Sociais Retidas na Fonte pelas PJ de
+COFINS - Contribuicao para o Financiamento da Seguridade
 
-Direito Privado
+Social
 
 Código da Receita/Denominacao
 
-5987-07 - CSLL - Retencao sobre Pagamentos de PJ a PJ de
-
-Direito Privado amparada por medida judicial
+5856-01 - COFINS - Nao cumulativa
 
 Debito Controlado em Processo
 
@@ -298,7 +292,7 @@ Nao
 
 Periodo de Apuracao
 
-Abril de 2024
+Julho de 2024
 
 Periodicidade
 
@@ -306,255 +300,7 @@ Mensal
 
 Data de Vencimento do Tributo/Quota
 
-20/05/2024
-
-Receita Federal do Brasi
-
-PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
-
-PERDCOMP 8.2
-
-CNPJ 00.315.457/0001-95
-
-03360.90463.170524.1.3.02-8375
-
-Nümero do Recibo de Transmissao DCTFWeb
-
-050000232426390
-
-Data de Transmissao DCTFWeb
-
-16/05/2024
-
-Categoria DCTFWeb
-
-Geral
-
-Indicativo de organismo estrangeiro DCTFWeb
-
-Nao
-
-Periodicidade DCTFWeb
-
-Mensal
-
-Periodo Apuracao DCTFWeb
-
-04/2024
-
-Principal
-
-1.144,79
-
-Multa
-
-0,00
-
-Juros
-
-0,00
-
-Total
-
-1.144,79
-
-003.Debito IRRF
-
-CNPJ do Detentor do Debito
-
-00.315.457/0001-95
-
-Débito de Sucedida
-
-Nao
-
-Grupo de Tributo
-
-IRRF - Imposto de Renda Retido na Fonte
-
-Código da Receita/Denominacao
-
-0561-07 - IRRF - Rendimento do Trabalho Assalariado no
-
-Pais/Ausente no Exterior a Servico do Pais
-
-Debito Controlado em Processo
-
-Nao
-
-Periodo de Apuracao
-
-Abril de 2024
-
-Periodicidade
-
-Mensal
-
-Data de Vencimento do Tributo/Quota
-
-20/05/2024
-
-Nümero do Recibo de Transmissao DCTFWeb
-
-050000232426390
-
-Data de Transmissao DCTFWeb
-
-16/05/2024
-
-Categoria DCTFWeb
-
-Geral
-
-Indicativo de organismo estrangeiro DCTFWeb
-
-Nao
-
-Periodicidade DCTFWeb
-
-Mensal
-
-Periodo Apuracao DCTFWeb
-
-04/2024
-
-Principal
-
-2.363.753,29
-
-Multa
-
-0,00
-
-Juros
-
-0,00
-
-Total
-
-2.363.753,29
-
-Receita Federal do Brasil
-
-PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
-
-PERDCOMP8.2
-
-CNPJ 00.315.457/0001-95
-
-03360.90463.170524.1.3.02-8375
-
-004. Debito IRRF
-
-CNPJ do Detentor do Débito
-
-00.315.457/0001-95
-
-Débito de Sucedida
-
-Nao
-
-Grupo de Tributo
-
-IRRF - Imposto de Renda Retido na Fonte
-
-Código da Receita/Denominacao
-
-0588-06 - IRRF - Rendimento do Trabalho sem Vinculo
-
-Empregaticio
-
-Debito Controlado em Processo
-
-Nao
-
-Periodo de Apuracao
-
-Abril de 2024
-
-Periodicidade
-
-Mensal
-
-Data de Vencimento do Tributo/Quota
-
-20/05/2024
-
-Nümero do Recibo de Transmissao DCTFWeb
-
-050000232426390
-
-Data de Transmissao DCTFWeb
-
-16/05/2024
-
-Categoria DCTFWeb
-
-Geral
-
-Indicativo de organismo estrangeiro DCTFWeb
-
-Nao
-
-Periodicidade DCTFWeb
-
-Mensal
-
-Periodo Apuracao DCTFWeb
-
-04/2024
-
-Principal
-
-957,80
-
-Multa
-
-0,00
-
-Juros
-
-0,00
-
-Total
-
-957,80
-
-005.Débito IRRF
-
-CNPJ do Detentor do Debito
-
-00.315.457/0001-95
-
-Débito de Sucedida
-
-Nao
-
-Grupo de Tributo
-
-IRRF - Imposto de Renda Retido na Fonte
-
-Código da Receita/Denominacao
-
-1708-06 - IRRF  Remuneracao de Servicos Profissionais
-
-Prestados por Pessoa Juridica/Servicos de Limpeza,
-
-Conservacao, Seguranca e Locacao de MaodeObra
-
-Prestados por Pessoa Juridica
-
-Debito Controlado em Processo
-
-Nao
-
-Periodo de Apuracao
-
-Abril de 2024
-
-Periodicidade
-
-Mensal
+23/08/2024
 
 Receita Federal do Brasil
 
@@ -562,41 +308,13 @@ PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
 
 PERDCOMP 8.2
 
-CNPJ 00.315.457/0001-95
+CNPJ 43.059.559/0001-08
 
-03360.90463.170524.1.3.02-8375
-
-Data de Vencimento do Tributo/Quota
-
-20/05/2024
-
-Nümero do Recibo de Transmissao DCTFWeb
-
-050000232426390
-
-Data de Transmissao DCTFWeb
-
-16/05/2024
-
-Categoria DCTFWeb
-
-Geral
-
-Indicativo de organismo estrangeiro DCTFWeb
-
-Nao
-
-Periodicidade DCTFWeb
-
-Mensal
-
-Periodo Apuracao DCTFWeb
-
-04/2024
+11430.20763.230824.1.3.03-0909
 
 Principal
 
-140.862,16
+626.510,44
 
 Multa
 
@@ -608,258 +326,8 @@ Juros
 
 Total
 
-140.862,16
-
-006. Débito IRRF
-
-CNPJ do Detentor do Debito
-
-00.315.457/0001-95
-
-Debito de Sucedida
-
-Nao
-
-Grupo de Tributo
-
-IRRF - Imposto de Renda Retido na Fonte
-
-Código da Receita/Denominacao
-
-3280-06 - IRRF - Servicos Prestados por Associados de
-
-Cooperativas de Trabalho
-
-Débito Controlado em Processo
-
-Nao
-
-Periodo de Apuracao
-
-Abril de 2024
-
-Periodicidade
-
-Mensal
-
-Data de Vencimento do Tributo/Quota
-
-20/05/2024
-
-Nümero do Recibo de Transmissao DCTFWeb
-
-050000232426390
-
-Data de Transmissao DCTFWeb
-
-16/05/2024
-
-Categoria DCTFWeb
-
-Geral
-
-Indicativo de organismo estrangeiro DCTFWeb
-
-Nao
-
-Periodicidade DCTFWeb
-
-Mensal
-
-Periodo Apuracao DCTFWeb
-
-04/2024
-
-Principal
-
-696,50
-
-Multa
-
-0,00
-
-Juros
-
-0,00
-
-Total
-
-696,50
-
-Receita Federal do Brasil
-
-PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
-
-PERDCOMP8.2
-
-CNPJ 00.315.457/0001-95
-
-03360.90463.170524.1.3.02-8375
-
-007. Débito IRRF
-
-CNPJ do Detentor do Debito
-
-00.315.457/0001-95
-
-Débito de Sucedida
-
-Nao
-
-Grupo de Tributo
-
-IRRF - Imposto de Renda Retido na Fonte
-
-Código da Receita/Denominacao
-
-3562-01 - IRRF Participacao nos lucros ou resultados (PLR)
-
-objeto de negociacao entre a empresa e seus empregados.
-
-Debito Controlado em Processo
-
-Nao
-
-Periodo de Apuracao
-
-Abril de 2024
-
-Periodicidade
-
-Mensal
-
-Data de Vencimento do Tributo/Quota
-
-20/05/2024
-
-Nümero do Recibo de Transmissao DCTFWeb
-
-050000232426390
-
-Data de Transmissao DCTFWeb
-
-16/05/2024
-
-Categoria DCTFWeb
-
-Geral
-
-Indicativo de organismo estrangeiro DCTFWeb
-
-Nao
-
-Periodicidade DCTFWeb
-
-Mensal
-
-Periodo Apuracao DCTFWeb
-
-04/2024
-
-Principal
-
-17.330.717,62
-
-Multa
-
-0,00
-
-Juros
-
-0,00
-
-Total
-
-17.330.717,62
-
-008.Débito IRRF
-
-CNPJ do Detentor do Debito
-
-00.315.457/0001-95
-
-Débito de Sucedida
-
-Nao
-
-Grupo de Tributo
-
-IRRF - Imposto de Renda Retido na Fonte
-
-Código da Receita/Denominacao
-
-8045-06 - IRRF  Comisses e Corretagens Pagas a Pessoa
-
-Juridica/Servicos de Propaganda Prestados por Pessoa
-
-Juridica
-
-Debito Controlado em Processo
-
-Nao
-
-Periodo de Apuracao
-
-Abril de 2024
-
-Periodicidade
-
-Mensal
-
-Data de Vencimento do Tributo/Quota
-
-20/05/2024
-
-Receita Federal do Brasil
-
-PEDIDO DE RESTITUICAO, RESSARCIMENTO OU REEMBOLSO E DECLARACAO DE COMPENSACAO
-
-PERDCOMP 8.2
-
-CNPJ 00.315.457/0001-95
-
-03360.90463.170524.1.3.02-8375
-
-Nümero do Recibo de Transmissao DCTFWeb
-
-050000232426390
-
-Data de Transmissao DCTFWeb
-
-16/05/2024
-
-Categoria DCTFWeb
-
-Geral
-
-Indicativo de organismo estrangeiro DCTFWeb
-
-Nao
-
-Periodicidade DCTFWeb
-
-Mensal
-
-Periodo Apuracao DCTFWeb
-
-04/2024
-
-Principal
-
-3.174,43
-
-Multa
-
-0,00
-
-Juros
-
-0,00
-
-Total
-
-3.174,43
+626.510,44
 
 TOTAL
 
-20.238.148,60
+1.635.843,65

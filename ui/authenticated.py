@@ -78,6 +78,8 @@ def enviar_imagem_para_azure():
             format_func=get_label,
             horizontal=True,
         )
+        if tipo_documento:
+            pass
         if not tipo_documento:
             st.info("Selecione um tipo de documento")
             return

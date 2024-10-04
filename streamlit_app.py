@@ -8,7 +8,8 @@ from ui.authenticated import (
 from db.postgres import get_prompts
 from ui.login import login
 
-
+if "pagina_nova" not in st.session_state:
+    st.session_state["pagina_nova"] = True
 if "file_uploaded" not in st.session_state:
     st.session_state["file_uploaded"] = False
 if "file_decoded" not in st.session_state:
@@ -46,9 +47,9 @@ if not st.session_state["prompt_received"]:
         st.session_state["prompt_received"] = True
 
 if st.session_state["authenticated"]:
-    # if not st.session_state["file_uploaded"]:
-    #     authenticated_page()
-    authenticated_page()
+    if not st.session_state["file_uploaded"]:
+        authenticated_page()
+    # authenticated_page()
 
     visualizar_png()
     enviar_imagem_para_azure()
