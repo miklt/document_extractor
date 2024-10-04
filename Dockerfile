@@ -3,7 +3,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y build-essential
-RUN apt-get -y install curl software-properties-common git poppler-utils  libgl1
+RUN apt-get -y install curl software-properties-common git poppler-utils libgl1
 RUN rm -rf /var/lib/apt/lists/*
 
 #RUN git clone https://github.com/streamlit/streamlit-example.git .
