@@ -21,8 +21,12 @@ if "png_file" not in st.session_state:
     st.session_state["png_file"] = None
 if "json_object" not in st.session_state:
     st.session_state["json_object"] = None
+if "token_metadata" not in st.session_state:
+    st.session_state["token_metadata"] = None
 if "prompt_received" not in st.session_state:
     st.session_state["prompt_received"] = False
+if "escala_imagem" not in st.session_state:
+    st.session_state["escala_imagem"] = 1
 
 if "text_prompts" not in st.session_state:
     st.session_state["text_prompts"] = None

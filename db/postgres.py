@@ -33,51 +33,69 @@ def get_prompts():
     return r
 
 
-def insert_document(json_doc, comentario):
+# def insert_document(json_doc, comentario):
+#     json_doc_str = json.dumps(json_doc)
+
+#     conn = get_connection()
+#     cursor = conn.cursor()
+#     insert_query = """
+#     INSERT INTO documentos (representacao_json, cnpj, data_hora_entrega, hash_arquivo, inscricao, protocolo, tipo_entrega, validacao, comentarios)
+#     VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s)
+#     """
+#     cursor.execute(
+#         insert_query,
+#         (
+#             json_doc_str,
+#             json_doc["cnpj"],
+#             json_doc["data_hora_entrega"],
+#             json_doc["hash_arquivo"],
+#             json_doc["inscricao"],
+#             json_doc["protocolo"],
+#             json_doc["tipo_entrega"],
+#             json_doc["validacao"],
+#             comentario,
+#         ),
+#     )
+#     conn.commit()
+#     cursor.close()
+#     conn.close()
+
+
+def insert_document_v2(
+    json_doc,
+    tipo_documento,
+    nome_arquivo,
+    comentarios,
+    escala=1,
+    tokens={},
+    detail="auto",
+):
     json_doc_str = json.dumps(json_doc)
-
-    conn = get_connection()
-    cursor = conn.cursor()
-    insert_query = """
-    INSERT INTO documentos (representacao_json, cnpj, data_hora_entrega, hash_arquivo, inscricao, protocolo, tipo_entrega, validacao, comentarios)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s)
-    """
-    cursor.execute(
-        insert_query,
-        (
-            json_doc_str,
-            json_doc["cnpj"],
-            json_doc["data_hora_entrega"],
-            json_doc["hash_arquivo"],
-            json_doc["inscricao"],
-            json_doc["protocolo"],
-            json_doc["tipo_entrega"],
-            json_doc["validacao"],
-            comentario,
-        ),
-    )
-    conn.commit()
-    cursor.close()
-    conn.close()
-
-
-def insert_document_v2(json_doc, tipo_documento, nome_arquivo, comentarios):
-    json_doc_str = json.dumps(json_doc)
+    tokens_str = json.dumps(tokens)
 
     try:
         conn = get_connection()
         cursor = conn.cursor()
         insert_query = """
-        INSERT INTO documentos (representacao_json, tipo_documento, nome_arquivo, comentarios)
-        VALUES (%s, %s, %s, %s)
+        INSERT INTO documentos (representacao_json, tipo_documento, nome_arquivo, comentarios,escala,tokens, resolucao)
+        VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
         cursor.execute(
             insert_query,
-            (json_doc_str, tipo_documento, nome_arquivo, comentarios),
+            (
+                json_doc_str,
+                tipo_documento,
+                nome_arquivo,
+                comentarios,
+                escala,
+                tokens_str,
+                detail,
+            ),
         )
         conn.commit()
     except Exception as e:
         st.error(f"An error occurred: {e}")
+        print(e)
     finally:
         if cursor:
             cursor.close()

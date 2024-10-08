@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import json
 
 
 from utils.payload import payload_azure_ai
@@ -20,6 +19,7 @@ def reiniciar_app():
     st.session_state["json_object"] = None
     st.session_state["tipo_documento"] = None
     st.session_state["json_from_ai_received"] = False
+    st.session_state["token_metadata"] = None
 
     if st.button("Ok"):
         st.rerun()
@@ -83,10 +83,38 @@ def enviar_imagem_para_azure():
         prompt = st.session_state["text_prompts"][tipo_documento]
 
     # st.write("Prompt: ", prompt)
+    detail = st.radio(
+        "Detalhe",
+        ["auto", "high", "low"],
+        index=None,
+        horizontal=True,
+    )
+    if not detail:
+        st.info("Selecione a qualidade da imagem esperada")
+        return
+    st.session_state["detail"] = detail
+
+    escala = st.number_input(
+        "Selecione a escala da imagem",
+        min_value=0.1,
+        max_value=1.0,
+        value=1.0,
+        step=0.1,disabled=True
+    )
+    if not escala:
+        st.info("A escala padrão é 1. Valores menores, diminuem a qualidade da imagem")
+        return
+    else:
+        st.session_state["escala_imagem"] = escala
     if st.button(
         "Consultar IA",
         on_click=send_request_to_azure_ai,
-        args=(st.secrets["token_gm"], conteudo_base64, prompt),
+        args=(
+            st.secrets["token_gm"],
+            st.session_state["conteudo_base64"],
+            prompt,
+            st.session_state["detail"],
+        ),
     ):
         pass
 
@@ -105,6 +133,7 @@ def visualizar_resultado():
     if st.session_state.json_object:
         st.write("Resultado da extração de informações:")
         objeto_json = st.session_state.json_object
+        tokens = st.session_state.token_metadata
 
         df_resultado = pd.DataFrame(
             list(objeto_json.items()), columns=["Campo", "Valor"]
@@ -126,6 +155,9 @@ def visualizar_resultado():
                 st.session_state["tipo_documento"],
                 st.session_state["filename"],
                 comentario,
+                st.session_state["escala_imagem"],
+                st.session_state["token_metadata"],
+                st.session_state["detail"],
             ),
         ):
             reiniciar_app()
