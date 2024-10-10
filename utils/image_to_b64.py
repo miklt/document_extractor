@@ -19,8 +19,9 @@ def get_poppler_path():
         return None
 
 
-def image_to_base64(file):
 
+
+def image_to_base64(file):
     # Read the file content
     file_content = file.read()
     filename = file.name
@@ -33,7 +34,7 @@ def image_to_base64(file):
     if filename.lower().endswith(".pdf"):
         # Convert PDF to PNG
         images = convert_from_bytes(
-            file_content, poppler_path=poppler_path, grayscale=True
+            file_content, poppler_path=poppler_path, grayscale=True, dpi=100
         )
         widths, heights = zip(*(i.size for i in images))
 

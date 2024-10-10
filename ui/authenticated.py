@@ -1,9 +1,8 @@
 import streamlit as st
 import pandas as pd
-
-
-from utils.payload import payload_azure_ai
 from utils.image_to_b64 import image_to_base64
+from utils.DocumentTrimmer import DocumentTrimmer
+from utils.FileToBase64 import FileToBase64
 from utils.request_to_azure import send_request_to_azure_ai
 from db.postgres import insert_document_v2
 
@@ -27,12 +26,6 @@ def reiniciar_app():
         st.session_state["label_button_enviar"] = "Enviar outro documento"
 
 
-def escolher_prompt(tipo_prompt):
-    print(tipo_prompt)
-    if tipo_prompt == "prompt 1":
-        st.session_state["text_prompt"] = st.secrets["prompt_1"]
-
-
 def get_label(label):
     if label == "acessorio":
         return "Acessório"
@@ -40,6 +33,8 @@ def get_label(label):
         return "Principal"
     if label == "compensacao":
         return "Compensação"
+    if label == "nfe":
+        return "Nota Fiscal"
 
 
 def authenticated_page():
@@ -50,7 +45,8 @@ def authenticated_page():
         st.session_state["file_uploaded"] = True
         filename = arquivo.name
         st.session_state["filename"] = filename
-        conteudo_base64, arquivo_png = image_to_base64(arquivo)
+        #conteudo_base64, arquivo_png = image_to_base64(arquivo)
+        conteudo_base64, arquivo_png = FileToBase64.get_base64(arquivo)
         if conteudo_base64 is not None:
             st.session_state["file_decoded"] = True
             st.session_state["conteudo_base64"] = conteudo_base64
@@ -68,7 +64,7 @@ def enviar_imagem_para_azure():
 
     tipo_documento = st.radio(
         "Tipo de Documento",
-        ["acessorio", "principal", "compensacao"],
+        ["acessorio", "principal", "compensacao", "nfe"],
         index=None,
         format_func=get_label,
         horizontal=True,
@@ -94,18 +90,7 @@ def enviar_imagem_para_azure():
         return
     st.session_state["detail"] = detail
 
-    escala = st.number_input(
-        "Selecione a escala da imagem",
-        min_value=0.1,
-        max_value=1.0,
-        value=1.0,
-        step=0.1,disabled=True
-    )
-    if not escala:
-        st.info("A escala padrão é 1. Valores menores, diminuem a qualidade da imagem")
-        return
-    else:
-        st.session_state["escala_imagem"] = escala
+    
     if st.button(
         "Consultar IA",
         on_click=send_request_to_azure_ai,

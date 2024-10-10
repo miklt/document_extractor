@@ -19,7 +19,7 @@ def get_prompts():
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT prompt_recibo_acessorio, prompt_recibo_principal, prompt_recibo_compensacao FROM prompts order by data_alteracao desc limit 1"
+        "SELECT prompt_recibo_acessorio, prompt_recibo_principal, prompt_recibo_compensacao, prompt_nfe FROM prompts order by data_alteracao desc limit 1"
     )
     prompt = cursor.fetchone()
     cursor.close()
@@ -30,6 +30,7 @@ def get_prompts():
         r["acessorio"] = prompt[0]
         r["principal"] = prompt[1]
         r["compensacao"] = prompt[2]
+        r["nfe"] = prompt[3]
     return r
 
 
