@@ -50,7 +50,7 @@ if not st.session_state["prompt_received"]:
         st.session_state["text_prompts"] = prompts
         st.session_state["prompt_received"] = True
 
-if not st.session_state["authenticated"]:
+if st.session_state["authenticated"]:
     if not st.session_state["file_uploaded"]:
         authenticated_page()
 
