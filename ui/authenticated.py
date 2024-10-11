@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-from utils.image_to_b64 import image_to_base64
-from utils.DocumentTrimmer import DocumentTrimmer
+
 from utils.FileToBase64 import FileToBase64
 from utils.request_to_azure import send_request_to_azure_ai
 from db.postgres import insert_document_v2
@@ -12,6 +11,7 @@ def reiniciar_app():
     st.write("O arquivo foi enviado com sucesso. Você pode fechar esta mensagem.")
     st.session_state["file_uploaded"] = False
     st.session_state["file_decoded"] = False
+    st.session_state["pdf_text_no_ocr"] = None
     st.session_state["filename"] = None
     st.session_state["conteudo_base64"] = None
     st.session_state["png_file"] = None
@@ -45,13 +45,17 @@ def authenticated_page():
         st.session_state["file_uploaded"] = True
         filename = arquivo.name
         st.session_state["filename"] = filename
-        #conteudo_base64, arquivo_png = image_to_base64(arquivo)
-        conteudo_base64, arquivo_png = FileToBase64.get_base64(arquivo)
+
+        # conteudo_base64, arquivo_png = image_to_base64(arquivo)
+
+        conteudo_base64, arquivo_png, pdf_text_no_ocr = FileToBase64.get_base64(arquivo)
         if conteudo_base64 is not None:
             st.session_state["file_decoded"] = True
             st.session_state["conteudo_base64"] = conteudo_base64
         if arquivo_png is not None:
             st.session_state["png_file"] = arquivo_png
+        if pdf_text_no_ocr is not None:
+            st.session_state["pdf_text_no_ocr"] = pdf_text_no_ocr
         arquivo = None
 
 
@@ -89,8 +93,12 @@ def enviar_imagem_para_azure():
         st.info("Selecione a qualidade da imagem esperada")
         return
     st.session_state["detail"] = detail
-
-    
+    if st.session_state["pdf_text_no_ocr"]:
+        prompt = (
+            prompt
+            + "Além da imagem, considere o markdown a seguir extraído do PDF\n\n"
+            + st.session_state["pdf_text_no_ocr"]
+        )
     if st.button(
         "Consultar IA",
         on_click=send_request_to_azure_ai,

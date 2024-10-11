@@ -6,6 +6,7 @@ from pdf2image import convert_from_bytes
 import numpy as np
 import cv2
 from PIL import Image
+from utils.PdfTextExtractor import PdfTextExtactor
 
 
 def get_poppler_path():
@@ -23,14 +24,11 @@ class FileToBase64:
             self.file = file
 
     @classmethod
-    def get_text_from_pdf(cls,file):
-        pass
-        
-    @classmethod
     def get_base64(cls, file):
         file_content = file.read()
         filename = file.name
         img_png = None
+        pdf_text_not_ocr = None
         poppler_path = get_poppler_path()
         print(poppler_path)
         if poppler_path:
@@ -63,6 +61,7 @@ class FileToBase64:
                 _, buffer = cv2.imencode(".png", combined_image)
 
                 processed_content = buffer.tobytes()
+            pdf_text_not_ocr = PdfTextExtactor.extract_text_from_pdf(file_content)
 
         elif filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif")):
             # Convert the file content to a numpy array
@@ -74,7 +73,7 @@ class FileToBase64:
             # Process the image using DocumentTrimmer
             output = DocumentTrimmer.crop_image(image_cv)
             # Convert the processed image back to bytes
-            _, buffer = cv2.imencode(".png", output )
+            _, buffer = cv2.imencode(".png", output)
 
             processed_content = buffer.tobytes()
             # processed_content = buffer
@@ -82,7 +81,10 @@ class FileToBase64:
         # Encode the processed content to base64
         base64_content = base64.b64encode(processed_content).decode("utf-8")
         img_png = FileToBase64.base64_to_png(base64_content)
-        return base64_content, img_png
+        if not len(pdf_text_not_ocr) > 7:
+            pdf_text_not_ocr = None
+
+        return base64_content, img_png, pdf_text_not_ocr
 
     @classmethod
     def base64_to_png(cls, base64_string):

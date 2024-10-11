@@ -17,6 +17,8 @@ if "filename" not in st.session_state:
     st.session_state["filename"] = None
 if "conteudo_base64" not in st.session_state:
     st.session_state["conteudo_base64"] = None
+if "pdf_text_no_ocr" not in st.session_state:
+    st.session_state["pdf_text_no_ocr"] = None
 if "png_file" not in st.session_state:
     st.session_state["png_file"] = None
 if "json_object" not in st.session_state:
@@ -48,7 +50,7 @@ if not st.session_state["prompt_received"]:
         st.session_state["text_prompts"] = prompts
         st.session_state["prompt_received"] = True
 
-if st.session_state["authenticated"]:
+if not st.session_state["authenticated"]:
     if not st.session_state["file_uploaded"]:
         authenticated_page()
 
