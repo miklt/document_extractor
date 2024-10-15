@@ -96,7 +96,7 @@ def insert_document_v2(
         conn.commit()
     except Exception as e:
         st.error(f"An error occurred: {e}")
-        print(e)
+        
     finally:
         if cursor:
             cursor.close()

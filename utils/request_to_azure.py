@@ -9,7 +9,7 @@ def send_request_to_azure_ai(token, conteudo_base64, prompt, detail="auto"):
         token, conteudo_base64, prompt=prompt, detail=detail
     )
     print("Sending request to Azure AI")
-    print(prompt)
+    # print(prompt)
     # Send request
     ENDPOINT_AZURE_AI = "https://synchrodatapowersolutions.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-06-01"
     response = None
@@ -28,7 +28,7 @@ def send_request_to_azure_ai(token, conteudo_base64, prompt, detail="auto"):
             st.session_state["json_from_ai_received"] = True
             json_string = response.json()["choices"][0]["message"]["content"]
             token_metadata = response.json()["usage"]
-            print(json_string, token_metadata)
+            # print(json_string, token_metadata)
             # Convert the string to a JSON object
             json_string = json_string.replace(
                 "'", '"'
